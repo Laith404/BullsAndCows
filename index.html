@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content" id="app">
+            <!-- window message -->
+            <!-- <div class="answerwindow">
+                <div class="message_block answerwindow__message_computer">
+                    <h3>Компьютер</h3>
+                    <p><strong>Правила игры:</strong> загадывается 4-значное число (цифры в нем не повторяются, а число может начинаться с 0), цель игрока — отгадать это число. После каждой попытки бот сообщает игроку, сколько цифр угадано с совпадением их позиции в исходном числе (быки) и сколько угадано без совпадения с позицией (коровы).</p>
+                </div>
+            </div> -->
+            <!-- user answer -->
+            <div class='answerUser'>
+                <input type="text" id='inner' placeholder='Введите число' autofocus>
+                <button type='button' id="answer">Ответить</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="Random.js"></script>
+    <script src="Game.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

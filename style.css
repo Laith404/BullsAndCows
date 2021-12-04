@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap");
+body {
+  background: #e0e0e0;
+  min-height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400; }
+
+p, span, h1, h2, h3, h4, h5, h6, h7, h8 {
+  margin: 0; }
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto; }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .content .answerwindow {
+    width: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    overflow-y: scroll;
+    border: 3px solid #000;
+    padding: 10px;
+    box-sizing: border-box; }
+    .content .answerwindow .message_block {
+      width: 440px;
+      min-height: 28px;
+      background: #000;
+      padding: 8px 20px 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: block;
+      border: 3px solid #000; }
+      .content .answerwindow .message_block h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 6px; }
+      .content .answerwindow .message_block p {
+        font-size: 1.15rem;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: 1.15px; }
+    .content .answerwindow .answerwindow__message_computer {
+      float: left; }
+      .content .answerwindow .answerwindow__message_computer h3 {
+        color: #fff; }
+      .content .answerwindow .answerwindow__message_computer p {
+        color: #fff; }
+    .content .answerwindow .answerwindow__message_user {
+      background: #fff;
+      float: right; }
+      .content .answerwindow .answerwindow__message_user h3 {
+        color: #000; }
+      .content .answerwindow .answerwindow__message_user p {
+        color: #000; }
+  .content .answerUser {
+    display: flex;
+    width: 100%;
+    border: 3px solid #000;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    box-sizing: border-box; }
+    .content .answerUser input {
+      width: 100%;
+      padding: 15px 20px;
+      border: 0;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+      background: #fff;
+      box-sizing: content-box;
+      color: #000;
+      font-size: 1.25rem;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      outline: none;
+      letter-spacing: 3px; }
+    .content .answerUser button {
+      position: relative;
+      width: 40%;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #000;
+      background: #fff;
+      border: 0;
+      border-left: 3px solid #000;
+      cursor: pointer;
+      transition: .25s ease-in-out; }
+      .content .answerUser button:hover {
+        background: #000;
+        color: #fff; }
