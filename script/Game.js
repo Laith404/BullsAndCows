@@ -13,6 +13,19 @@ class Game {
             step: 0
         } 
     }
+    hiddenNumber() {
+        let hide = [];
+        while(hide.length < 4) {
+            let random = Math.floor(Math.random() * 10);
+            if(!hide.includes(random)) {
+                hide.push(random);
+            }
+            if(hide[0] === 0 ) {
+                hide = [];
+            }
+        }
+        return hide;
+    }
 
     getNumber() {
         let setNum = [], uniqArray = [];
@@ -22,10 +35,10 @@ class Game {
         uniqArray = ([...new Set(setNum)]);
 
         if(setNum.length == 0 ){
-            return Random.hiddenNumber();
+            return this.hiddenNumber();
          }
 
-        if(uniqArray.length != 4 || num instanceof String) {
+        if(uniqArray.length != 4 ||  num.length > 4 || num instanceof String) {
             this.player.error = true;
             return this.player.error;
         }
@@ -34,6 +47,9 @@ class Game {
         }
 
     }
+
+    
+
     setCowsAndBolls() {
         let bull,cows;
         bull = cows = 0;
@@ -113,7 +129,7 @@ class Game {
                         Выйграно игр: <strong >${this.player.wins}</strong>;<br />
                         Сделано ходов: <strong >${this.player.step}</strong>;<br />
                         Получено очков: <strong >+100</strong>; <br />
-                        Всего очко: <strong >${this.player.point}
+                        Всего очков: <strong >${this.player.point}
                         `
                     } else {
                         text.innerHTML = `
@@ -123,7 +139,7 @@ class Game {
                         Выйграно игр: <strong >${this.player.wins}</strong>;<br />
                         Сделано ходов: <strong >${this.player.step}</strong>;<br />
                         Получено очков: <strong >+100</strong>; <br />
-                        Всего очко: <strong >${this.player.point}
+                        Всего очков: <strong >${this.player.point}
                         `
                     }
                     if(this.player.step > 20) {
@@ -134,7 +150,7 @@ class Game {
                         Выйграно игр: <strong >${this.player.wins}</strong>;<br />
                         Сделано ходов: <strong >${this.player.step}</strong>;<br />
                         Получено очков: <strong >+100</strong>; <br />
-                        Всего очко: <strong >${this.player.point}
+                        Всего очков: <strong >${this.player.point}
                         `
                     }
                     
@@ -196,7 +212,7 @@ class Game {
             }
         })
         document.body.addEventListener('keydown', () => {
-            if(event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
+            if(event.code == 'F8') {
                 this.restart();
                 input.focus();
                         while(app.children.length > 1 ) {
@@ -207,7 +223,7 @@ class Game {
     }
     start() {
         this.viewupdate();
-        this.hideNum = Random.hiddenNumber();
+        this.hideNum = this.hiddenNumber();
     }
     
     restart() {
@@ -215,6 +231,6 @@ class Game {
         this.hideNum = this.playerNum = [];
         this.player.overGame = false;
         this.player.step = 0;
-        this.hideNum = Random.hiddenNumber();
+        this.hideNum = this.hiddenNumber();
     }
 }
